@@ -2,7 +2,6 @@
 
 A modern, responsive finance dashboard application built with React, Vite, Tailwind CSS, and MockAPI. Track your income, expenses, and gain valuable financial insights with an intuitive interface.
 
-![Finance Dashboard Preview](https://zorvynfd.netlify.app/)
 
 ## ✨ Features
 
