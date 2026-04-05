@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Pencil, Trash2, Eye, AlertCircle } from 'lucide-react';
-import { TransactionForm } from './Transactionform';
+import { TransactionForm } from './TransactionForm';
 
 export const TransactionList = () => {
   const { transactions, loading, error, role, removeTransaction } = useApp();

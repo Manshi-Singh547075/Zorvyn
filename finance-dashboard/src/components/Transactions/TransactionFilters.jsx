@@ -3,7 +3,7 @@ import { useApp } from "../../context/AppContext";
 import { Search, Filter, ChevronDown } from "lucide-react";
 
 const TransactionFilters = () => {
-  const { filters, setFilters, loading } = useApp();
+  const { filters, setFilters, transactions, loading } = useApp();
 
   const typeOptions = [
     { value: "all", label: "All Types" },
@@ -43,10 +43,10 @@ const TransactionFilters = () => {
   }
 
   return (
-    <div className="card p-4 mb-6 ">
+    <div className="card p-4 mb-6">
       <div className="flex flex-col sm:flex-row gap-4 items-end justify-between">
         <div className="relative flex-1 max-w-md">
-          <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-white-400" />
+          <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <input
             type="text"
             placeholder="Search transactions..."
@@ -65,7 +65,7 @@ const TransactionFilters = () => {
               <select
                 value={filters.type}
                 onChange={handleTypeChange}
-                className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 appearance-none "
+                className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 appearance-none"
               >
                 {typeOptions.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -85,7 +85,7 @@ const TransactionFilters = () => {
               <select
                 value={`${filters.sortBy}:${filters.sortOrder}`}
                 onChange={(e) => handleSortChange(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500  appearance-none placeholder-gray-400"
+                className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 appearance-none"
               >
                 {sortOptions.map((option) => (
                   <option
@@ -96,7 +96,7 @@ const TransactionFilters = () => {
                   </option>
                 ))}
               </select>
-              <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-white-400 pointer-events-none" />
+              <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
             </div>
           </div>
         </div>

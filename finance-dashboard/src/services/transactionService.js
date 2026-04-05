@@ -22,7 +22,7 @@ const checkPermission = (role, action) => {
 };
 
 // Fetch all transactions
-export const fetchTransactions = async (filters = {}) => {
+export const fetchTransactions = async (filters = {}, role = 'viewer') => {
   try {
     const params = new URLSearchParams();
     
